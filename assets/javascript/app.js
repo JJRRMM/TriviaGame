@@ -30,7 +30,7 @@ function showQuestions() {
     // $("#question").append("China <input type ='radio' value='one'>"+"India <input type='radio' value=next>"+"Third <input type='radio' value=third>"+"Fourth <input type='radio' value=fourth>");
     $("#question").append(Answers[i]);
     };
-    setTimeout(done, 1000 * 10);
+    setTimeout(done, 1000 * 30);
 }
 function done(){   
     var right =0;
