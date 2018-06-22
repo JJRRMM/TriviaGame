@@ -9,19 +9,20 @@ var questions = ["The tallest statue in the world as of 2018, the Spring Temple 
                   "In boxing, what is the term for an illegal punch to the back of the head or base of the skull?",
                   "Which park is the most filmed location in the world?"];
 
-var Answers = ["China <input type ='radio' name='group1'value=1'>"+"India <input type='radio' name='group1' value=2>"+"France <input type='radio' name='group1' value=3>"+"Spain <input type='radio' name='group1'value=4>",
-               "Meg Ryan <input type ='radio' name='group2' value=1'>"+"Melanie Girffith <input type='radio'name='group2' value=2>"+"Julia Roberts <input type='radio' name='group2' value=3>"+"Sandra Bullock <input type='radio'name='group2'  value=4>",
-               "Redbox <input type ='radio' name='group3' value=1'>"+"Blockbuster <input type='radio' name='group3' value=2>"+"Movie Gallery <input type='radio' name='group3' value=3>"+"Gamerush <input type='radio' name='group3' value=4>",
-               "Ecuador <input type ='radio' name='group4' value=1'>"+"Columbia <input type='radio' name='group4' value=2>"+"Somalia <input type='radio' name='group4' value=3>"+"Kiribati <input type='radio' name='group4' value=4>",
-               "Laurence Olivier <input type ='radio' name='group5' value=1'>"+"Dustin Hoffman <input type='radio' name='group5' value=2>"+"Jack Nicholoson <input type='radio' name='group5' value=3>"+"Daniel Day-Lewis <input type='radio' name='group5' value=4>",
-               "Clark Kent <input type ='radio' name='group6' value=1'>"+"Bruce Wayne <input type='radio'  name='group6' value=2>"+"Dick Grayson <input type='radio'  name='group6' value=3>"+"Tony Stark <input type='radio'  name='group6' value=4>",
-               "Calypso and Honey <input type ='radio' name='group7' value=1'>"+"Cooper and Horatio <input type='radio' name='group7' value=2>"+"Calvin and Henry <input type='radio' name='group7' value=3>"+"Califonia and Hawaii <input type='radio' name='group7' value=4>",
+var Answers = ["China <input type ='radio' name='group1' value=1>"+"India <input type='radio' name='group1' value=2>"+"France <input type='radio' name='group1' value=3>"+"Spain <input type='radio' name='group1'value=4>",
+               "Meg Ryan <input type ='radio' name='group2' value=1>"+"Melanie Girffith <input type='radio'name='group2' value=2>"+"Julia Roberts <input type='radio' name='group2' value=3>"+"Sandra Bullock <input type='radio'name='group2'  value=4>",
+               "Redbox <input type ='radio' name='group3' value=1>"+"Blockbuster <input type='radio' name='group3' value=2>"+"Movie Gallery <input type='radio' name='group3' value=3>"+"Gamerush <input type='radio' name='group3' value=4>",
+               "Ecuador <input type ='radio' name='group4' value=1>"+"Columbia <input type='radio' name='group4' value=2>"+"Somalia <input type='radio' name='group4' value=3>"+"Kiribati <input type='radio' name='group4' value=4>",
+               "Laurence Olivier <input type ='radio' name='group5' value=1>"+"Dustin Hoffman <input type='radio' name='group5' value=2>"+"Jack Nicholoson <input type='radio' name='group5' value=3>"+"Daniel Day-Lewis <input type='radio' name='group5' value=4>",
+               "Clark Kent <input type ='radio' name='group6' value=1>"+"Bruce Wayne <input type='radio'  name='group6' value=2>"+"Dick Grayson <input type='radio'  name='group6' value=3>"+"Tony Stark <input type='radio'  name='group6' value=4>",
+               "Calypso and Honey <input type ='radio' name='group7' value=1>"+"Cooper and Horatio <input type='radio' name='group7' value=2>"+"Calvin and Henry <input type='radio' name='group7' value=3>"+"Califonia and Hawaii <input type='radio' name='group7' value=4>",
                "Dennis Conner <input type ='radio' name='group8' value=1>"+"Alexander Cuthbert <input type='radio' name='group8' value=2>"+"Alexander Sturrock <input type='radio' name='group8' value=3>"+"Russell Coutts <input type='radio' name='group8' value=4>",
                "Kidney Pouch <input type ='radio' name='group9' value=1>"+"Sucker Punch <input type='radio' name='group9' value=2>"+"Headbutt <input type='radio' name='group9' value=3>"+"Rabbit Punch <input type='radio' name='group9' value=4>",
-               "MackArthur Park <input type ='radio' name='group10' value='one'>"+"Baloboa Park <input type='radio' name='group10' value=2>"+"Central Park <input type='radio' name='group10'value=3>"+"Hyde Park <input type='radio' name='group10' value=4>"]  ;
+               "MackArthur Park <input type ='radio' name='group10' value=1>"+"Baloboa Park <input type='radio' name='group10' value=2>"+"Central Park <input type='radio' name='group10'value=3>"+"Hyde Park <input type='radio' name='group10' value=4>"]  ;
 
 function showQuestions() { 
-    stopwatch.start();
+    // stopwatch.start();
+    countDown();
     for (i=0;i<questions.length;i++) {
         var questionhtml = "<p>" + questions[i] + "</p";
     $("#question").append(questionhtml);
@@ -47,62 +48,64 @@ function done(){
     var ans9 = $('input[name=group9]:checked').val();
     var ans10 = $('input[name=group10]:checked').val();
     
-    if (ans1 = 1) {
+    if (ans1 == 1) {
+        right = right + 1;
+    } else { 
+        wrong=wrong +1;
+    }
+         
+    if (ans2 == 1) {        
         right = right + 1;
     } else { 
         wrong=wrong +1;
     } 
+    if (ans3 == 2) {
+        right = right + 1;
+    } else { 
+        wrong=wrong +1;
+    } 
+    if (ans4 == 1) {
+        right = right + 1;
+    } else { 
+        wrong=wrong +1;
+    }
+    if (ans5 == 3) {
+        right = right + 1;
+    } else { 
+        wrong=wrong +1;
+    }
     
-    // if (ans2 = 1) {
-    //     right = right + 1;
-    // } else { 
-    //     wrong=wrong +1;
-    // } 
-    // if (ans3 = 2) {
-    //     right = right + 1;
-    // } else { 
-    //     wrong=wrong +1;
-    // } 
-    // if (ans4 = 1) {
-    //     right = right + 1;
-    // } else { 
-    //     wrong=wrong +1;
-    // } 
-    // if (ans5 = 3) {
-    //     right = right + 1;
-    // } else { 
-    //     wrong=wrong +1;
-    // } 
-    // if (ans6 = 2) {
-    //     right = right + 1;
-    // } else { 
-    //     wrong=wrong +1;
-    // } 
-    // if (ans7 = 4) {
-    //     right = right + 1;
-    // } else { 
-    //     wrong=wrong +1;
-    // } 
-    // if (ans8 = 1) {
-    //     right = right + 1;
-    // } else { 
-    //     wrong=wrong +1;
-    // } 
-    // if (ans9 = 4) {
-    //     right = right + 1;
-    // } else { 
-    //     wrong=wrong +1;
-    // if (ans10 = 3) {
-    //     right = right + 1;
-    //    } else { 
-    //     wrong=wrong +1;
-    //   } 
+    if (ans6 == 2) {
+        right = right + 1;
+    } else { 
+        wrong=wrong +1;
+    } 
+    if (ans7 == 4) {
+        right = right + 1;
+    } else { 
+        wrong=wrong +1;
+    } 
+    if (ans8 == 1) {
+        right = right + 1;
+    } else { 
+        wrong=wrong +1;
+    } 
+    if (ans9 == 4) {
+        right = right + 1;
+    } else { 
+        wrong=wrong +1;
+    }
+    if (ans10 == 3) {
+        right = right + 1;
+       } else { 
+        wrong=wrong +1;
+      } 
     $("#question").empty();
     $("#question").append("Totally Trivial Trivia! <br/>");
     $("#question").append("All Done ! <br/>");
     $("#question").append("Correct Answers: "+ right + "<br/>");
-    $("#question").append("Incorrect Answers: <br/>");
-    $("#question").append("Unanswered:  ");
+    $("#question").append("Incorrect Answers:" + wrong + "<br/>");
+    // $("#question").append("Unanswered:  ");
 }
 var intervalId;
 
@@ -184,3 +187,12 @@ var stopwatch = {
     return minutes + ":" + seconds;
   }
 };
+function countDown() { 
+    var timeleft = 10;
+    var downloadTimer = setInterval(function(){
+    timeleft--;
+    document.getElementById("display").textContent = "Time Remaining: " + timeleft;
+    if(timeleft <= 0)
+        clearInterval(downloadTimer);
+    },1000);
+}
